@@ -1,0 +1,162 @@
+@use '../utilities/_variables.scss' as variables;
+
+.btn {
+  border: solid 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  hyphens: none;
+  min-height: 3.5rem;
+  font-size: 1.125rem;
+  padding: 0.5rem 0.75rem;
+  color: variables.$white;
+  text-decoration-line: none;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+  white-space: normal;
+
+  // In case it's applied to an anchor tag
+  &:hover {
+    @apply no-underline;
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  &.garnet {
+    background-color: variables.$garnet-standard;
+    border: solid 1px variables.$garnet-standard;
+
+    &:hover,
+    &:active {
+      background-color: variables.$garnet-dark;
+      border-color: variables.$garnet-dark;
+    }
+    &:selected {
+      background-color: variables.$garnet-standard;
+      border-color: variables.$garnet-standard;
+    }
+
+    &:disabled {
+      background: transparent;
+      border: solid 1px variables.$grey-standard;
+      color: variables.$grey-standard;
+    }
+  }
+
+  &.navy {
+    background-color: variables.$navy-blue-standard;
+    border: solid 1px variables.$navy-blue-standard;
+
+    &:hover,
+    &:active {
+      background-color: variables.$navy-blue-dark;
+      border-color: variables.$navy-blue-dark;
+    }
+    &:selected {
+      background-color: variables.$navy-blue-standard;
+      border-color: variables.$navy-blue-standard;
+    }
+
+    &:disabled {
+      background: transparent;
+      border: solid 1px variables.$grey-standard;
+      color: variables.$grey-standard;
+    }
+  }
+
+  &.premium {
+    background-color: variables.$premium-standard;
+    border-radius: 4px;
+    border: solid 1px variables.$premium-standard;
+    font-size: 1rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1.5rem;
+
+    &:hover,
+    &:active {
+      background-color: variables.$premium-dark;
+      border-color: variables.$premium-dark;
+    }
+    &:selected {
+      background-color: variables.$premium-standard;
+      border-color: variables.$premium-standard;
+    }
+    &:disabled {
+      background: transparent;
+      border: solid 1px variables.$grey-standard;
+      color: variables.$grey-standard;
+    }
+  }
+
+  &.pill {
+    border-radius: 48px;
+    font-size: 0.75rem;
+    min-height: 2rem;
+    padding: 0.5rem 1rem;
+
+    &.blue {
+      background-color: variables.$blue-standard;
+      border-color: variables.$blue-standard;
+
+      &:hover,
+      &:active {
+        background-color: variables.$blue-dark;
+        border-color: variables.$blue-dark;
+      }
+      &:selected {
+        background-color: variables.$blue-standard;
+        border-color: variables.$blue-standard;
+      }
+
+      &:disabled {
+        background: transparent;
+        border: solid 1px variables.$grey-standard;
+        color: variables.$grey-standard;
+      }
+    }
+
+    &.green {
+      background-color: variables.$green-standard;
+      border-color: variables.$green-standard;
+      &:hover,
+      &:active {
+        background-color: variables.$green-dark;
+        border-color: variables.$green-dark;
+      }
+      &:selected {
+        background-color: variables.$green-standard;
+        border-color: variables.$green-standard;
+      }
+
+      &:disabled {
+        background: transparent;
+        border: solid 1px variables.$grey-standard;
+        color: variables.$grey-standard;
+      }
+    }
+
+    &.grey {
+      background-color: variables.$grey-standard;
+      border-color: variables.$grey-standard;
+
+      &:hover,
+      &:active {
+        background-color: variables.$grey-dark;
+        border-color: variables.$grey-dark;
+      }
+      &:selected {
+        background-color: variables.$grey-standard;
+        border-color: variables.$grey-standard;
+      }
+
+      &:disabled {
+        background: transparent;
+        border: solid 1px variables.$grey-standard;
+        color: variables.$grey-standard;
+      }
+    }
+  }
+}

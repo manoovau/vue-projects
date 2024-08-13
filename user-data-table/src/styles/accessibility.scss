@@ -1,0 +1,23 @@
+@use './utilities/_variables.scss' as variables;
+
+:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
+/**
+ * Cross-browser styles for explicit focus via 
+ * keyboard-based (eg Tab) navigation
+ */
+:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem variables.$white,
+    0 0 0 0.35rem variables.$navy-blue-standard;
+}
+
+// Input elements already have a default focus style
+input:focus,
+input:active {
+  border-color: variables.$text-secondary;
+  box-shadow: none;
+}

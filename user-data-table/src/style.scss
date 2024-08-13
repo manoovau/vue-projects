@@ -1,0 +1,41 @@
+// Global resets and prerequisites
+@use "./src/styles/reset.scss";
+@use "./src/styles/accessibility.scss";
+
+/* Generic and basic components */
+@use "./styles/components/buttons.scss";
+@use "./styles/components/forms.scss";
+@use "./styles/components/modal.scss";
+@use "./styles/utilities/_variables.scss" as variables;
+
+:root {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: variables.$black;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  width: -webkit-fill-available;
+
+  @media (min-width: variables.$breakpoint-md) {
+  }
+
+  @media (min-width: variables.$breakpoint-lg) {
+    max-width: 980px;
+  }
+}

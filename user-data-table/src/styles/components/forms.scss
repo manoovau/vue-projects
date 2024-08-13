@@ -1,0 +1,85 @@
+@use '../utilities/_variables.scss' as variables;
+
+$input-px: 1rem; // Padding x axis
+$input-py: 0.875rem; // Padding y axis
+$input-pr: 1rem; // Padding right
+$input-pl: 2.75rem; // Padding left
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 1.5rem;
+
+  label {
+    background-color: variables.$white;
+    color: variables.$text-secondary;
+    font-size: 0.75rem;
+    left: 1rem;
+    padding: 0 5px;
+    position: absolute;
+    top: -1.5ex; // ex: The height of the letter x in the font
+    z-index: 1;
+  }
+}
+
+input {
+  border: 1px solid variables.$text-light;
+  color: variables.$text-secondary;
+  border-radius: 6px;
+  padding: $input-py $input-px;
+  position: relative;
+  width: calc(100% - ($input-px * 2));
+
+  &::placeholder {
+    color: variables.$text-light;
+  }
+
+  &:active {
+    border-color: variables.$text-secondary;
+  }
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon {
+  padding-left: $input-pl;
+  width: calc(100% - ($input-pr + $input-pl));
+}
+
+.icon-mail {
+  color: variables.$grey-standard;
+  position: absolute;
+  top: 0.875rem;
+  left: 0.875rem;
+  z-index: 1;
+}
+
+.error-input {
+  border-color: variables.$error;
+}
+
+.error-message {
+  color: variables.$error;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 1.25rem;
+  margin-bottom: -0.1rem;
+}
+
+// Remove the number input arrows
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
